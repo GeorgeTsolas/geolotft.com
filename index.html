@@ -3,49 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coaching Sessions</title>
+    <title>Geolo - Challenger TFT Coach</title>
     <style>
         body {
-            background-color: #141414; /* Dark TFT Theme */
-            color: white;
             font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #000428, #004e92);
+            color: #fff;
         }
-        .session {
-            margin: 20px;
-            padding: 10px;
-            border: 1px solid #555;
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+        }
+        .session-cards {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .card {
+            background-color: #222;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: calc(20% - 40px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .card h3 {
+            color: #d4af37;
+        }
+        .booking-button {
+            background-color: #d4af37;
+            color: #000;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
             border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
         }
-        a {
-            color: #1E90FF;
+        footer {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Coaching Sessions</h1>
-    <div class="session">
-        <h2>Free Consultation</h2>
-        <p>If you don't know which session to book let's talk for a bit and figure out what's best for you!</p>
-    </div>
-    <div class="session">
-        <h2>1-on-1 1 Game</h2>
-        <p>This entry-level coaching session includes a VOD review.</p>
-    </div>
-    <div class="session">
-        <h2>1-on-1 2 Games</h2>
-        <p>Experience personalized coaching tailored to your needs.</p>
-    </div>
-    <div class="session">
-        <h2>Intensive 4 Games</h2>
-        <p>Enjoy a multi-game in-depth experience designed for serious improvement.</p>
-    </div>
-    <div class="session">
-        <h2>Rank-Up Package (3 Sessions)</h2>
-        <p>Get serious improvement tracking with this package.</p>
+    <div class="container">
+        <section class="profile">
+            <img src="penguTFT.webp" alt="Geolo's Avatar">
+            <div>
+                <h1>Geolo</h1>
+                <p>Challenger TFT Coach</p>
+                <p>Welcome! I'm Geolo, a Challenger TFT coach dedicated to helping players improve their skills and achieve their goals in Teamfight Tactics.</p>
+            </div>
+        </section>
+
+        <section class="session-cards">
+            <div class="card">
+                <h3>Free Consultation</h3>
+                <p>Duration: 15 mins</p>
+                <p>Price: FREE</p>
+                <p>~ Let's discuss your goals and how I can help you improve your game!</p>
+                <a href="https://metafy.gg/@geolo" class="booking-button">Book Now</a>
+            </div>
+            <div class="card">
+                <h3>1-on-1 1 Game</h3>
+                <p>Duration: 1 hour</p>
+                <p>Price: $15</p>
+                <p>~ Get personalized coaching during a single game.</p>
+                <a href="https://metafy.gg/@geolo" class="booking-button">Book Now</a>
+            </div>
+            <div class="card">
+                <h3>1-on-1 2 Games</h3>
+                <p>Duration: 2 hours</p>
+                <p>Price: $25</p>
+                <p>~ Dive deeper into strategy with two games of coaching.</p>
+                <a href="https://metafy.gg/@geolo" class="booking-button">Book Now</a>
+            </div>
+            <div class="card">
+                <h3>Intensive 4 Games</h3>
+                <p>Duration: 3 hours</p>
+                <p>Price: $47</p>
+                <p>~ An intensive session focusing on four games to refine your skills.</p>
+                <a href="https://metafy.gg/@geolo" class="booking-button">Book Now</a>
+            </div>
+            <div class="card">
+                <h3>Rank-Up Package</h3>
+                <p>Duration: 3x 2-game sessions</p>
+                <p>Price: $75</p>
+                <p>~ A comprehensive package for dedicated coaching over three sessions.</p>
+                <a href="https://metafy.gg/@geolo" class="booking-button">Book Now</a>
+            </div>
+        </section>
     </div>
     <footer>
-        <p>Discord: <a href="https://discord.gg/geolo69">geolo69</a></p>
-        <p>Metafy: <a href="https://metafy.gg">metafy link</a></p>
+        <p>Discord ID: geolo69</p>
+        <p>Add me on Discord for booking!</p>
     </footer>
 </body>
 </html>
