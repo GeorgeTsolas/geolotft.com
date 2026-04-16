@@ -32,12 +32,11 @@
             --navy-card-hover: #0f1e38;
             --text-primary: #f0ead8;
             --text-muted: #8a96aa;
-            --text-dim: #4a5568;
+            --text-dim: #5a6478;
+            --teal: #2a9d8f;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Outfit', sans-serif;
@@ -126,9 +125,7 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover {
-            color: var(--gold-light);
-        }
+        .nav-links a:hover { color: var(--gold-light); }
 
         /* ── Hero ── */
         .hero {
@@ -139,9 +136,7 @@
             align-items: center;
         }
 
-        .hero-avatar-wrap {
-            position: relative;
-        }
+        .hero-avatar-wrap { position: relative; }
 
         .hero-avatar-ring {
             width: 160px;
@@ -152,9 +147,7 @@
             animation: spin-ring 8s linear infinite;
         }
 
-        @keyframes spin-ring {
-            to { transform: rotate(360deg); }
-        }
+        @keyframes spin-ring { to { transform: rotate(360deg); } }
 
         .hero-avatar-inner {
             width: 100%;
@@ -228,9 +221,7 @@
             border-top: 1px solid var(--gold-border);
         }
 
-        .stat {
-            text-align: left;
-        }
+        .stat { text-align: left; }
 
         .stat-value {
             font-family: 'Cinzel', serif;
@@ -274,9 +265,7 @@
         }
 
         /* ── Session cards ── */
-        .sessions-section {
-            padding-bottom: 5rem;
-        }
+        .sessions-section { padding-bottom: 5rem; }
 
         .cards-grid {
             display: grid;
@@ -313,18 +302,14 @@
             transform: translateY(-3px);
         }
 
-        .card:hover::before {
-            opacity: 1;
-        }
+        .card:hover::before { opacity: 1; }
 
         .card.featured {
             border-color: var(--gold);
             background: linear-gradient(135deg, #0f1e38, #122040);
         }
 
-        .card.featured::before {
-            opacity: 1;
-        }
+        .card.featured::before { opacity: 1; }
 
         .card-badge {
             font-size: 0.65rem;
@@ -340,7 +325,7 @@
         }
 
         .card-badge.free {
-            background: #2a9d8f;
+            background: var(--teal);
             color: #fff;
         }
 
@@ -371,6 +356,14 @@
             flex-shrink: 0;
         }
 
+        /* ── Pricing with strikethrough ── */
+        .card-price-wrap {
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
         .card-price {
             font-family: 'Cinzel', serif;
             font-size: 1.5rem;
@@ -378,8 +371,28 @@
             color: var(--gold-light);
         }
 
-        .card-price.free-price {
-            color: #2a9d8f;
+        .card-price.free-price { color: var(--teal); }
+
+        .price-original {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            text-decoration: line-through;
+            text-decoration-color: rgba(201, 168, 76, 0.45);
+        }
+
+        .price-discount-tag {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--teal);
+            background: rgba(42, 157, 143, 0.12);
+            border: 1px solid rgba(42, 157, 143, 0.35);
+            padding: 2px 6px;
+            border-radius: 20px;
+            align-self: center;
         }
 
         .card-desc {
@@ -436,7 +449,7 @@
 
         .footer-brand {
             font-family: 'Cinzel', serif;
-            font-size: 1rem;
+            font-size: 1.15rem;
             font-weight: 600;
             color: var(--gold);
         }
@@ -445,7 +458,7 @@
             display: flex;
             align-items: center;
             gap: 0.6rem;
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: var(--text-muted);
         }
 
@@ -455,13 +468,13 @@
         }
 
         .footer-note {
-            font-size: 0.8rem;
-            color: var(--text-dim);
+            font-size: 0.9rem;
+            color: var(--text-muted);
             width: 100%;
         }
 
         .metafy-note {
-            font-size: 0.78rem;
+            font-size: 0.85rem;
             color: var(--text-dim);
             margin-top: 0.25rem;
         }
@@ -474,25 +487,12 @@
                 padding: 3rem 0 2.5rem;
             }
 
-            .hero-avatar-wrap {
-                margin: 0 auto;
-            }
+            .hero-avatar-wrap { margin: 0 auto; }
+            .hero-text .bio { margin: 0 auto; }
+            .hero-stats { justify-content: center; }
+            .nav-links { display: none; }
 
-            .hero-text .bio {
-                margin: 0 auto;
-            }
-
-            .hero-stats {
-                justify-content: center;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
+            .cards-grid { grid-template-columns: 1fr; }
 
             footer {
                 flex-direction: column;
@@ -512,7 +512,6 @@
             <ul class="nav-links">
                 <li><a href="#sessions">Sessions</a></li>
                 <li><a href="https://metafy.gg/@geolo" target="_blank">Metafy</a></li>
-                <li><a href="https://discord.com/users/geolo69" target="_blank">Discord</a></li>
             </ul>
         </nav>
     </header>
@@ -569,12 +568,14 @@
                         15 minutes
                     </div>
                 </div>
-                <p class="card-price free-price">Free</p>
+                <div class="card-price-wrap">
+                    <p class="card-price free-price">Free</p>
+                </div>
                 <p class="card-desc">Discuss your goals, current rank, and biggest in-game problems. Find out if coaching is right for you.</p>
                 <a href="https://metafy.gg/@geolo/sessions/free-consultation-Zam0uacWwPt" class="book-btn" target="_blank">Book Free Session</a>
             </div>
 
-            <!-- 1 Game -->
+            <!-- 1 Game — 10% off -->
             <div class="card">
                 <h3 class="card-title">1-on-1 — 1 Game</h3>
                 <div class="card-meta">
@@ -583,13 +584,18 @@
                         ~1 hour
                     </div>
                 </div>
-                <p class="card-price">$15</p>
+                <div class="card-price-wrap">
+                    <span class="price-original">$15</span>
+                    <p class="card-price">$13.50</p>
+                    <span class="price-discount-tag">−10%</span>
+                </div>
                 <p class="card-desc">Personalized live coaching through one full game. Real-time feedback on every decision.</p>
                 <a href="https://metafy.gg/@geolo/sessions/1-on-1-tft-coaching-1-game-mOy6OTh18fY" class="book-btn" target="_blank">Book Now</a>
             </div>
 
-            <!-- 2 Games -->
-            <div class="card">
+            <!-- 2 Games — Most Popular + 10% off -->
+            <div class="card featured">
+                <span class="card-badge">Most Popular</span>
                 <h3 class="card-title">1-on-1 — 2 Games</h3>
                 <div class="card-meta">
                     <div class="card-meta-item">
@@ -597,14 +603,18 @@
                         ~2 hours
                     </div>
                 </div>
-                <p class="card-price">$25</p>
+                <div class="card-price-wrap">
+                    <span class="price-original">$25</span>
+                    <p class="card-price">$22.50</p>
+                    <span class="price-discount-tag">−10%</span>
+                </div>
                 <p class="card-desc">Two games of coaching to identify patterns and start correcting recurring mistakes.</p>
-                <a href="https://mfy.gg/@geolo/t/2gamescoaching" class="book-btn" target="_blank">Book Now</a>
+                <a href="https://mfy.gg/@geolo/t/2gamescoaching" class="book-btn featured-btn" target="_blank">Book Now</a>
             </div>
 
-            <!-- 4 Games — Featured -->
-            <div class="card featured">
-                <span class="card-badge">Most Popular</span>
+            <!-- 4 Games -->
+            <div class="card">
+                <span class="card-badge">Best Value</span>
                 <h3 class="card-title">Intensive — 4 Games</h3>
                 <div class="card-meta">
                     <div class="card-meta-item">
@@ -612,14 +622,15 @@
                         ~3 hours
                     </div>
                 </div>
-                <p class="card-price">$47</p>
+                <div class="card-price-wrap">
+                    <p class="card-price">$47</p>
+                </div>
                 <p class="card-desc">Deep-dive intensive session. Four games gives us enough data to reshape your decision-making process.</p>
-                <a href="https://mfy.gg/@geolo/t/4gamescoaching" class="book-btn featured-btn" target="_blank">Book Now</a>
+                <a href="https://mfy.gg/@geolo/t/4gamescoaching" class="book-btn" target="_blank">Book Now</a>
             </div>
 
             <!-- Rank-Up Package -->
             <div class="card">
-                <span class="card-badge">Best Value</span>
                 <h3 class="card-title">Rank-Up Package</h3>
                 <div class="card-meta">
                     <div class="card-meta-item">
@@ -627,7 +638,9 @@
                         3 × 2-game sessions
                     </div>
                 </div>
-                <p class="card-price">$75</p>
+                <div class="card-price-wrap">
+                    <p class="card-price">$75</p>
+                </div>
                 <p class="card-desc">Three structured sessions across multiple sittings. Built for players serious about climbing a division or more.</p>
                 <a href="https://mfy.gg/@geolo/t/3sessionspackage" class="book-btn" target="_blank">Book Now</a>
             </div>
@@ -639,7 +652,7 @@
     <footer>
         <span class="footer-brand">Geolo</span>
         <div class="footer-discord">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color: #5865f2;"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.114 18.1.133 18.116a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="color: #5865f2;"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.114 18.1.133 18.116a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
             <span>geolo69</span>
         </div>
         <p class="footer-note">For questions, custom requests, or long-term coaching inquiries, reach out on Discord.</p>
