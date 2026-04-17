@@ -77,7 +77,7 @@
             padding: 0 2rem;
         }
 
-        /* ── Nav ── */
+        /* Nav */
         header {
             position: relative;
             z-index: 10;
@@ -112,7 +112,7 @@
         .nav-links a:hover { color: var(--gold-light); }
         .nav-links a.active { color: var(--gold); }
 
-        /* ── Page header ── */
+        /* Page header */
         .page-header {
             padding: 4rem 0 3rem;
             display: flex;
@@ -151,7 +151,7 @@
             margin-top: 1rem;
         }
 
-        /* ── Guide card ── */
+        /* Guide card */
         .guide-card {
             background: var(--navy-card);
             border: 1px solid var(--gold-border);
@@ -214,4 +214,388 @@
             color: var(--text-dim);
             display: flex;
             align-items: center;
-            gap:
+            gap: 0.35rem;
+        }
+
+        .guide-card-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .guide-card-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        .guide-card-desc strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Chapters */
+        .chapters-wrap { margin-top: 0.5rem; }
+
+        .chapters-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.4rem;
+        }
+
+        .chapter-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            padding: 0.45rem 0.6rem;
+            border-radius: 6px;
+            background: rgba(201, 168, 76, 0.04);
+            border: 1px solid rgba(201, 168, 76, 0.08);
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .chapter-item:hover {
+            background: rgba(201, 168, 76, 0.08);
+            border-color: rgba(201, 168, 76, 0.18);
+        }
+
+        .chapter-name {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        .chapter-words {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        /* CTA side panel */
+        .guide-card-cta {
+            background: rgba(201, 168, 76, 0.04);
+            border-left: 1px solid var(--gold-border);
+            padding: 2rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1.25rem;
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .cta-price-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+        }
+
+        .cta-price {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--teal);
+            line-height: 1;
+        }
+
+        .cta-price-sub {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            margin-top: 0.25rem;
+        }
+
+        .cta-btn {
+            display: block;
+            background: var(--gold);
+            color: var(--navy-deep);
+            border: none;
+            padding: 0.7rem 1.4rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            transition: background 0.2s;
+            width: 100%;
+        }
+
+        .cta-btn:hover { background: var(--gold-light); }
+
+        .cta-platform {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+        }
+
+        /* Divider */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 0 0 2.5rem;
+        }
+
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--gold-border);
+        }
+
+        .section-divider-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* Coaching CTA */
+        .coaching-cta {
+            background: var(--navy-card);
+            border: 1px solid var(--gold-border);
+            border-radius: 14px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coaching-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .coaching-cta-text h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .coaching-cta-text p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .coaching-cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy-deep);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+
+        .coaching-cta-btn:hover { background: var(--gold-light); }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--gold-border);
+            padding: 2.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-brand {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .footer-discord { display: flex; align-items: center; gap: 0.6rem; font-size: 1rem; color: var(--text-muted); }
+        .footer-discord span { color: var(--text-primary); font-weight: 500; }
+        .footer-note { font-size: 0.9rem; color: var(--text-muted); width: 100%; }
+        .metafy-note { font-size: 0.85rem; color: var(--text-dim); margin-top: 0.25rem; }
+
+        @media (max-width: 700px) {
+            .guide-card { grid-template-columns: 1fr; }
+            .guide-card-cta { border-left: none; border-top: 1px solid var(--gold-border); min-width: unset; }
+            .nav-links { display: none; }
+            .page-header { padding: 2.5rem 0 2rem; }
+            footer { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <header>
+        <a href="index.html" class="nav-brand">Geolo</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#sessions">Sessions</a></li>
+                <li><a href="guides.html" class="active">Guides</a></li>
+                <li><a href="https://metafy.gg/@geolo" target="_blank">Metafy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <div class="page-header-text">
+            <p>Free Resources</p>
+            <h1>Guides</h1>
+            <p class="page-header-desc">
+                Structured guides covering the fundamentals that actually move the needle — economy, tempo, positioning, and more.
+            </p>
+        </div>
+    </div>
+
+    <div class="section-divider">
+        <span class="section-divider-title">Featured Guide</span>
+    </div>
+
+    <div class="guide-card">
+        <div class="guide-card-body">
+
+            <div class="guide-card-meta">
+                <span class="guide-tag">Fundamentals</span>
+                <span class="guide-word-count">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    ~5,500 words · 11 chapters
+                </span>
+            </div>
+
+            <h2 class="guide-card-title">TFT Fundamentals — Complete Guide</h2>
+
+            <p class="guide-card-desc">
+                Covers the core concepts every player below Master needs to understand to climb consistently. Instead of focusing on specific comps, this guide teaches you <strong>how to think about the game</strong> — economy, tempo, leveling, rolling, positioning, items, augments, and more. Concepts that apply to every patch and every game.
+            </p>
+
+            <div class="chapters-wrap">
+                <span class="chapters-label">What's inside</span>
+                <div class="chapters-grid">
+                    <div class="chapter-item">
+                        <span class="chapter-name">Introduction</span>
+                        <span class="chapter-words">92 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Economy (Econ) – The Foundation</span>
+                        <span class="chapter-words">690 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Tempo – Why You Win or Lose</span>
+                        <span class="chapter-words">668 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Win Streak &amp; Loss Streak</span>
+                        <span class="chapter-words">211 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Leveling – When to Spend Gold</span>
+                        <span class="chapter-words">348 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Rolling – When and Why</span>
+                        <span class="chapter-words">408 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Items – Play for Strength</span>
+                        <span class="chapter-words">1,121 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Augments &amp; Encounters</span>
+                        <span class="chapter-words">762 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Playing for Top 4 vs 1st</span>
+                        <span class="chapter-words">468 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Positioning – Small Changes, Big Impact</span>
+                        <span class="chapter-words">239 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Common Mistakes – Recap</span>
+                        <span class="chapter-words">325 words</span>
+                    </div>
+                    <div class="chapter-item">
+                        <span class="chapter-name">Conclusion</span>
+                        <span class="chapter-words">126 words</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-card-cta">
+            <div>
+                <div class="cta-price-label">Price</div>
+
+                <div class="cta-price" style="font-size: 1.4rem; color: var(--text-dim); text-decoration: line-through;">
+                    $15.00
+                </div>
+
+                <div class="cta-price" style="color: var(--teal); font-size: 2rem;">
+                    $9.75
+                </div>
+
+                <div class="cta-price-sub" style="color: var(--gold-light);">
+                    35% off
+                </div>
+            </div>
+            <a href="https://metafy.gg/guides/view/tft-fundamentals-complete-guide-bqYngRMi4AE" class="cta-btn" target="_blank">Read the Guide →</a>
+            <span class="cta-platform">Hosted on Metafy</span>
+        </div>
+    </div>
+
+    <div class="coaching-cta">
+        <div class="coaching-cta-text">
+            <h2>Want to go deeper?</h2>
+            <p>The guide covers the theory. Coaching puts it into practice — live, in your actual games, tailored to your specific mistakes.</p>
+        </div>
+        <a href="index.html#sessions" class="coaching-cta-btn">View Coaching Sessions</a>
+    </div>
+
+    <footer>
+        <span class="footer-brand">Geolo</span>
+        <div class="footer-discord">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style="color: #5865f2;"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.08.114 18.1.133 18.116a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+            <span>geolo69</span>
+        </div>
+        <p class="footer-note">For questions, custom requests, or long-term coaching inquiries, reach out on Discord.</p>
+        <p class="metafy-note">All sessions are booked securely via Metafy.</p>
+    </footer>
+
+</div>
+</body>
+</html>
